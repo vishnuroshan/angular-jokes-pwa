@@ -1,6 +1,8 @@
 <div class="container">
-    <div class="centered-element">
-      <p>I'm a Camper, and I'm vertically centered</p>
-    </div>
-    <div class="centered-element">button</div>
+  <div class="centered-element">
+    <!-- <p>{{joke}}</p> -->
+    <ngx-typed-js [typeSpeed]="10" [showCursor]="false" [strings]="[joke]">
+      <h1 class="typing"></h1>
+    </ngx-typed-js>
+  </div>
 </div>

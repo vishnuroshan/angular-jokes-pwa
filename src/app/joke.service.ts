@@ -9,7 +9,7 @@ export class JokeService {
 
   getJoke() {
     return this.http.get(
-      'https://v2.jokeapi.dev/joke/Programming,Pun?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&format=txt',
+      'https://v2.jokeapi.dev/joke/Any?format=txt&safe-mode',
       { responseType: 'text' }
     );
   }

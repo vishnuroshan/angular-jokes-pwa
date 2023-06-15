@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NgxTypedJsModule } from 'ngx-typed-js';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [

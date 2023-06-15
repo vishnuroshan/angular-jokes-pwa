@@ -2,8 +2,16 @@
   <p>click to get another joke!</p>
 
   <div class="centered-element" (click)="generateJokes()">
-    <!-- <p>{{joke}}</p> -->
-    <ngx-typed-js [typeSpeed]="10" [showCursor]="false" [strings]="[joke]">
+    <div class="loader-background">
+      <div class="loader-content" *ngIf="loading">
+        <img
+          style="width: 200px; height: auto"
+          src="https://i.pinimg.com/originals/a0/02/a3/a002a3e51a2adc85d6c0a4684892e743.gif"
+        />
+        <p>loading...</p>
+      </div>
+    </div>
+    <ngx-typed-js id="typed" *ngIf="!loading" [typeSpeed]="10" [showCursor]="false" [strings]="[joke]">
       <h1 class="typing"></h1>
     </ngx-typed-js>
   </div>

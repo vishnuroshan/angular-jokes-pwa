@@ -11,10 +11,14 @@ export class AppComponent implements OnInit, OnDestroy {
   joke = '';
   loading = true;
   ngOnDestroy(): void {}
-  ngOnInit() {
+
+  generateJokes() {
     this.jokes.getJoke().subscribe((jokeContent) => {
       this.loading = false;
       this.joke = jokeContent;
     });
+  }
+  ngOnInit() {
+    this.generateJokes();
   }
 }

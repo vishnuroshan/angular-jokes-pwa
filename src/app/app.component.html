@@ -1,5 +1,8 @@
 <div class="container">
   <p (click)="generateJokes()">click to get another joke!</p>
+  <div class="chip">
+    <div class="chip-content">{{category}}</div>
+</div>
   <app-loading [loading]="loading" [message]="loadingMessage"></app-loading>
   <app-joke-text
     [setup]="setup"

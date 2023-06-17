@@ -11,19 +11,23 @@ export class AppComponent implements OnInit {
   constructor(private jokes: JokeService) {}
   setup: string = '';
   loading = true;
+  category: string = '';
   loadingMessage = 'loading...';
   generateJokes() {
     this.loading = true;
     this.jokes.getJokeJson().subscribe((jokeContent: JokeResponse) => {
       console.log(jokeContent);
-      if (jokeContent.error) this.loadingMessage = 'Error!! 🔥🔥💻🔥🔥🥲';
-
-      if (jokeContent.type === 'single') {
-        this.setup = jokeContent.joke;
-        this.delivery = '';
+      if (jokeContent.error) {
+        this.loadingMessage = 'Error!! 🔥🔥💻🔥🔥';
       } else {
-        this.setup = jokeContent.setup;
-        this.delivery = jokeContent.delivery;
+        this.category = jokeContent.category;
+        if (jokeContent.type === 'single') {
+          this.setup = jokeContent.joke;
+          this.delivery = '';
+        } else {
+          this.setup = jokeContent.setup;
+          this.delivery = jokeContent.delivery;
+        }
       }
       this.loading = false;
     });

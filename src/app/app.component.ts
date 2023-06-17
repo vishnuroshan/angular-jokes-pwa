@@ -16,7 +16,6 @@ export class AppComponent implements OnInit {
   generateJokes() {
     this.loading = true;
     this.jokes.getJokeJson().subscribe((jokeContent: JokeResponse) => {
-      console.log(jokeContent);
       if (jokeContent.error) {
         this.loadingMessage = 'Error!! 🔥🔥💻🔥🔥';
       } else {

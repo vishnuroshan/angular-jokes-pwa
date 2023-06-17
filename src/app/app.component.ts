@@ -1,21 +1,30 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { JokeResponse } from 'src/app/interfaces/app.interface';
 import { JokeService } from 'src/app/joke.service';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit {
+  delivery: string = '';
   constructor(private jokes: JokeService) {}
-  joke = '';
+  setup: string = '';
   loading = true;
-  ngOnDestroy(): void {}
-
+  loadingMessage = 'loading...';
   generateJokes() {
     this.loading = true;
-    this.jokes.getJoke().subscribe((jokeContent) => {
-      this.joke = jokeContent;
+    this.jokes.getJokeJson().subscribe((jokeContent: JokeResponse) => {
+      console.log(jokeContent);
+      if (jokeContent.error) this.loadingMessage = 'Error!! 🔥🔥💻🔥🔥🥲';
+
+      if (jokeContent.type === 'single') {
+        this.setup = jokeContent.joke;
+        this.delivery = '';
+      } else {
+        this.setup = jokeContent.setup;
+        this.delivery = jokeContent.delivery;
+      }
       this.loading = false;
     });
   }

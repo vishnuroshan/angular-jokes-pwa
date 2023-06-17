@@ -5,9 +5,11 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NgxTypedJsModule } from 'ngx-typed-js';
+import { LoadingComponent } from './loading/loading.component';
+import { JokeTextComponent } from './joke-text/joke-text.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoadingComponent, JokeTextComponent],
   imports: [
     NgxTypedJsModule,
     BrowserModule,

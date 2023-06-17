@@ -1,0 +1,23 @@
+<div class="centered-element">
+<ngx-typed-js
+  id="typed-setup"
+  *ngIf="setup && setup.length>0"
+  (completed)="onSetupStopped($event)"
+  [typeSpeed]="10"
+  [showCursor]="false"
+  [strings]="[setup]"
+>
+  <h1 class="typing"></h1>
+</ngx-typed-js>
+
+<ngx-typed-js
+  *ngIf="delivery && delivery.length>0 && startDelivery"
+  id="typed-delivery"
+  [typeSpeed]="15"
+  [showCursor]="false"
+  [strings]="[delivery]"
+>
+  <h1 class="typing"></h1>
+</ngx-typed-js>
+</div>
+

@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   loading = true;
   category: string = '';
   loadingMessage = 'loading...';
+
   generateJokes() {
     this.loading = true;
     this.jokes.getJokeJson().subscribe((jokeContent: JokeResponse) => {

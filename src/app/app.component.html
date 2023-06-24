@@ -1,13 +1,12 @@
-<div class="container">
-  <p (click)="generateJokes()">click to get another joke!</p>
+<div class="container" (click)="generateJokes()">
+  <p (click)="generateJokes()">click anywhere to get another joke!</p>
   <div class="chip">
-    <div class="chip-content">{{category}}</div>
-</div>
+    <div class="chip-content">{{ category }}</div>
+  </div>
   <app-loading [loading]="loading" [message]="loadingMessage"></app-loading>
   <app-joke-text
     [setup]="setup"
     [delivery]="delivery"
     *ngIf="!loading"
-    (click)="generateJokes()"
   ></app-joke-text>
 </div>

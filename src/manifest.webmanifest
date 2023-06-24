@@ -1,7 +1,7 @@
 {
   "name": "random-jokes",
   "short_name": "random-jokes",
-  "theme_color": "#1976d2",
+  "theme_color": "#ff5349",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",

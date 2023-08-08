@@ -3,7 +3,11 @@
   "short_name": "random-jokes",
   "theme_color": "#ff5349",
   "background_color": "#fafafa",
-  "display": "standalone",
+  "display": "browser",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone"
+  ],
   "scope": "./",
   "start_url": "./",
   "icons": [
